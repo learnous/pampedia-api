@@ -22,13 +22,17 @@ repositories {
 }
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-thymeleaf")
+	implementation("org.springframework.boot:spring-boot-starter-thymeleaf:2.5.6")
 	implementation("org.jetbrains.kotlin:kotlin-reflect")
 	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8")
-	developmentOnly("org.springframework.boot:spring-boot-devtools")
-	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor")
-	testImplementation("org.springframework.boot:spring-boot-starter-test")
+	developmentOnly("org.springframework.boot:spring-boot-devtools:2.5.6")
+	annotationProcessor("org.springframework.boot:spring-boot-configuration-processor:2.5.6")
+	testImplementation("org.springframework.boot:spring-boot-starter-test:2.5.6")
 	implementation("org.springframework.boot:spring-boot-starter-web:2.5.6")
+	// https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+	implementation("org.seleniumhq.selenium:selenium-java:4.0.0")
+
+
 
 }
 

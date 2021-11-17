@@ -3,17 +3,23 @@ package com.pampedia.controller
 import org.openqa.selenium.By
 import org.openqa.selenium.chrome.ChromeDriver
 import org.springframework.web.bind.annotation.*
+import java.util.logging.Logger
 import org.openqa.selenium.WebElement as WebElement
 
 @RestController
 class ApiController {
+    companion object {
+        val LOG = Logger.getLogger(ApiController.javaClass.name)
+    }
+
 
     @PostMapping(value = ["/test"])
     @ResponseBody
     fun userLogin(@RequestBody param: HashMap<String, String>):String{
         val id = param["id"]
         val password = param["password"]
-
+        LOG.info("info//$id//$password")
+        LOG.warning("info//$id//$password")
         return "id: $id / pw: $password"
     }
 

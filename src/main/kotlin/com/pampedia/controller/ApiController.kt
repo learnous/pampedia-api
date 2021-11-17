@@ -48,8 +48,22 @@ class ApiController {
             Thread.sleep(1000) // 50위까지 가져옴
 
             val fanList = driver.findElementByCssSelector(".css-j3o65g")
-            println(fanList.text)
-            returnStr = fanList.text
+//            println(fanList.text)
+
+            val fanArr = driver.findElementsByCssSelector("a")
+            for (temp in fanArr){
+                val tempHref = temp.getAttribute("href")
+                val tempTitle = temp.findElements(By.cssSelector(".css-g0fzv3"))
+                for(tt in tempTitle){
+                    val testArr = tt.text.split("\n")
+                    for(i in 0 .. testArr.size-1){
+                        returnStr += "$i 번째 : "+testArr[i]
+                    }
+                }
+                returnStr += "$tempHref "
+                returnStr += "</br>=============================="
+            }
+
         } catch (e: Exception) {
             e.printStackTrace()
         } finally {
